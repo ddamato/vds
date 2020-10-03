@@ -1,0 +1,21 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Button from '../components/Button';
+
+<Meta title="Design System/Button" component={Button} />
+
+# Button
+
+With `MDX` we can define a story for `Button` right in the middle of our
+Markdown documentation.
+
+<Canvas>
+  <Story name="Default" args={{ type: 'Submit' }}>
+      { (args, { argTypes }) => {
+        return {
+          props: Object.keys(argTypes),
+          components: { Button },
+          template: '<Button :type="type">Click Me</Button>'
+        }
+      }}
+  </Story>
+</Canvas>
